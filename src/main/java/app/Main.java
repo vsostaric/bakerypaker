@@ -11,7 +11,7 @@ public class Main {
 
         boolean argsOK = checkArgs(args);
 
-        if(!argsOK) {
+        if (!argsOK) {
             System.out.println("Invalid arguments. Two arguments needed: ordersSize and productCode.");
             System.out.println("Example: java -jar *.jar 10 VS5");
             return;
