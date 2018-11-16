@@ -17,7 +17,6 @@ public class PackingServiceImplTest {
     @Test
     public void testPackingService() {
 
-
         List<Integer> packs = new ArrayList<Integer>();
         packs.add(3);
         packs.add(5);
@@ -26,6 +25,40 @@ public class PackingServiceImplTest {
         assertNotNull(packed);
         assertTrue(packed.size() == 1);
         assertTrue(packed.get(5) == 2);
+
+
+    }
+
+    @Test
+    public void testPackingService2() {
+
+        List<Integer> packs = new ArrayList<Integer>();
+        packs.add(2);
+        packs.add(5);
+        packs.add(8);
+        Map<Integer, Integer> packed = service.packOrder(14, packs);
+
+        assertNotNull(packed);
+        assertTrue(packed.size() == 2);
+        assertTrue(packed.get(8) == 1);
+        assertTrue(packed.get(2) == 3);
+
+
+    }
+
+    @Test
+    public void testPackingService3() {
+
+        List<Integer> packs = new ArrayList<Integer>();
+        packs.add(3);
+        packs.add(5);
+        packs.add(9);
+        Map<Integer, Integer> packed = service.packOrder(13, packs);
+
+        assertNotNull(packed);
+        assertTrue(packed.size() == 2);
+        assertTrue(packed.get(5) == 2);
+        assertTrue(packed.get(3) == 1);
 
 
     }
