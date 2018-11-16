@@ -38,6 +38,7 @@ public class PackingServiceImpl implements PackingService {
         builder.append("\n");
 
         for (Integer pack : packs.keySet()) {
+            builder.append("\t");
             builder.append(packs.get(pack));
             builder.append(" * ");
             builder.append(pack);
