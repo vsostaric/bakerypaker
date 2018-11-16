@@ -1,12 +1,8 @@
 package app.service.impl;
 
 import app.service.PackingService;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -14,13 +10,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class PackingServiceImplTest {
 
-    private PackingService service = new PackingServiceImpl();
+    private PackingService service = new PackingServiceImpl(
+            new ProductServiceImpl("products_test.json")
+    );
 
     @Test
     public void testPackingService() {
 
-        List<Integer> packs = Lists.newArrayList(5, 3);
-        Map<Integer, Integer> packed = service.packOrder(10, packs);
+        Map<Integer, Integer> packed = service.packOrder(10, "VS5");
 
         assertNotNull(packed);
         assertTrue(packed.size() == 1);
@@ -32,8 +29,7 @@ public class PackingServiceImplTest {
     @Test
     public void testPackingService2() {
 
-        List<Integer> packs = Lists.newArrayList(8, 5, 2);
-        Map<Integer, Integer> packed = service.packOrder(14, packs);
+        Map<Integer, Integer> packed = service.packOrder(14, "MB11");
 
         assertNotNull(packed);
         assertTrue(packed.size() == 2);
@@ -46,8 +42,7 @@ public class PackingServiceImplTest {
     @Test
     public void testPackingService3() {
 
-        List<Integer> packs = Lists.newArrayList(9, 5, 3);
-        Map<Integer, Integer> packed = service.packOrder(13, packs);
+        Map<Integer, Integer> packed = service.packOrder(13, "CF");
 
         assertNotNull(packed);
         assertTrue(packed.size() == 2);

@@ -1,12 +1,12 @@
 package app.service;
 
-import java.util.List;
+import java.math.BigDecimal;
 import java.util.Map;
 
 public interface PackingService {
 
-    Map<Integer, Integer> packOrder(int orderSize, List<Integer> packSizes);
+    Map<Integer, Integer> packOrder(int orderSize, String productCode);
 
-    String getPackingOutput(String productCode, int orderSize);
+    String getPackingOutput(int orderSize, String productCode);
 
 }
