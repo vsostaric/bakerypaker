@@ -1,6 +1,8 @@
 package app.service.impl;
 
 import app.service.PackingService;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -17,9 +19,7 @@ public class PackingServiceImplTest {
     @Test
     public void testPackingService() {
 
-        List<Integer> packs = new ArrayList<Integer>();
-        packs.add(3);
-        packs.add(5);
+        List<Integer> packs = Lists.newArrayList(5, 3);
         Map<Integer, Integer> packed = service.packOrder(10, packs);
 
         assertNotNull(packed);
@@ -32,10 +32,7 @@ public class PackingServiceImplTest {
     @Test
     public void testPackingService2() {
 
-        List<Integer> packs = new ArrayList<Integer>();
-        packs.add(2);
-        packs.add(5);
-        packs.add(8);
+        List<Integer> packs = Lists.newArrayList(8, 5, 2);
         Map<Integer, Integer> packed = service.packOrder(14, packs);
 
         assertNotNull(packed);
@@ -49,10 +46,7 @@ public class PackingServiceImplTest {
     @Test
     public void testPackingService3() {
 
-        List<Integer> packs = new ArrayList<Integer>();
-        packs.add(3);
-        packs.add(5);
-        packs.add(9);
+        List<Integer> packs = Lists.newArrayList(9, 5, 3);
         Map<Integer, Integer> packed = service.packOrder(13, packs);
 
         assertNotNull(packed);

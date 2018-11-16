@@ -7,4 +7,6 @@ public interface PackingService {
 
     Map<Integer, Integer> packOrder(int orderSize, List<Integer> packSizes);
 
+    String getPackingOutput(String productCode, int orderSize);
+
 }

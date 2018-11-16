@@ -36,6 +36,11 @@ public class PackingServiceImpl implements PackingService {
         return packed;
     }
 
+    @Override
+    public String getPackingOutput(String productCode, int orderSize) {
+        return null;
+    }
+
     private boolean pack(int orderSize, List<Integer> sortedPackSizes, Map<Integer, Integer> packed) {
         int i = 0;
         while (orderSize > 0 && i < sortedPackSizes.size()) {
